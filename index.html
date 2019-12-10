@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Intro</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+      <div>
+        1st number:
+        <input type="number" v-model="firstNumber" />
+      </div>
+      <div>
+        2nd number:
+        <input type="number" v-model="secondNumber" />
+      </div>
+      <div>
+        3rd number:
+        <input type="number" v-model="thirdNumber" />
+      </div>
+      <div><button v-on:click="computeTheSum()">Compute sum</button></div>
+      <p>The result is: {{ sum }}</p>
+      <h1>Add a new fruit:</h1>
+      <div>
+        New fruit:
+        <input type="text" v-model="newFruit" />
+        <button v-on:click="createFruit()">Create fruit</button>
+      </div>
+      <h1>Here are the {{ fruits.length }} fruits</h1>
+      <div v-for="fruit in fruits">
+        <p>The fruit is: {{ fruit }}</p>
+      </div>
+      <button v-on:click="toggleImage()">Toggle image</button>
+      <img
+        v-if="showImage"
+        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
+        alt=""
+        width="400"
+      />
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
